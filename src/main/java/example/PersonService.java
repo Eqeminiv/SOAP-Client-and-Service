@@ -4,6 +4,7 @@ import example.repositories.PersonRepository;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import java.util.List;
 
 @WebService(endpointInterface = "example.PersonServiceInterface")
 public class PersonService implements PersonServiceInterface{
@@ -28,5 +29,15 @@ public class PersonService implements PersonServiceInterface{
     public String hello(){
         System.out.println("HELLO start");
         return "hello";
+    }
+    @Override
+    public void addPerson(Person p)
+    {
+        personRepository.personList.add(p);
+    }
+    @Override
+    public List<Person> getAllPersons()
+    {
+        return personRepository.personList;
     }
 }

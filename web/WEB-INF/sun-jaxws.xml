@@ -6,4 +6,5 @@
         name = 'sayHello'
         implementation="example.PersonServiceInterface"
         url-pattern='/hello'/>
+
 </endpoints>
